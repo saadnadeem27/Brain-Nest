@@ -421,8 +421,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **💬 Discord**: [Join our community](https://discord.gg/brainnest)
 - **🐛 Issues**: [GitHub Issues](https://github.com/yourusername/brain_nest/issues)
 - **📖 Documentation**: [Wiki](https://github.com/yourusername/brain_nest/wiki) -->
-- **💼 LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourusername)
-- **🐙 GitHub**: [Your GitHub Profile](https://github.com/yourusername)
+- **💼 LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/saad-nadeem-07-an-expert-flutter-developer/)
+- **🐙 GitHub**: [Your GitHub Profile](https://github.com/saadnadeem27)
 
 
 ---
