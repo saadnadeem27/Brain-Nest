@@ -10,13 +10,13 @@ class GradientCard extends StatelessWidget {
   final double? borderRadius;
 
   const GradientCard({
-    Key? key,
+    super.key,
     required this.child,
     this.colors,
     this.padding,
     this.onTap,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +26,11 @@ class GradientCard extends StatelessWidget {
         padding: padding ?? const EdgeInsets.all(20),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: colors ?? [
-              AppColors.surfaceLight,
-              AppColors.surfaceLight,
-            ],
+            colors: colors ??
+                [
+                  AppColors.surfaceLight,
+                  AppColors.surfaceLight,
+                ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -58,19 +59,19 @@ class ProgressIndicatorCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   const ProgressIndicatorCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.progress,
     this.progressColor,
     this.icon,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     final color = progressColor ?? AppColors.primary;
-    
+
     return GradientCard(
       onTap: onTap,
       borderRadius: 12,
@@ -152,7 +153,7 @@ class StatisticCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   const StatisticCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     required this.icon,
@@ -160,7 +161,7 @@ class StatisticCard extends StatelessWidget {
     this.trend,
     this.isPositiveTrend = true,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -193,21 +194,22 @@ class StatisticCard extends StatelessWidget {
                     vertical: 2,
                   ),
                   decoration: BoxDecoration(
-                    color: (isPositiveTrend 
-                        ? AppColors.successGreen 
-                        : AppColors.errorRed).withOpacity(0.1),
+                    color: (isPositiveTrend
+                            ? AppColors.successGreen
+                            : AppColors.errorRed)
+                        .withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        isPositiveTrend 
-                            ? Icons.trending_up 
+                        isPositiveTrend
+                            ? Icons.trending_up
                             : Icons.trending_down,
                         size: 12,
-                        color: isPositiveTrend 
-                            ? AppColors.successGreen 
+                        color: isPositiveTrend
+                            ? AppColors.successGreen
                             : AppColors.errorRed,
                       ),
                       const SizedBox(width: 2),
@@ -216,8 +218,8 @@ class StatisticCard extends StatelessWidget {
                         style: GoogleFonts.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.w600,
-                          color: isPositiveTrend 
-                              ? AppColors.successGreen 
+                          color: isPositiveTrend
+                              ? AppColors.successGreen
                               : AppColors.errorRed,
                         ),
                       ),

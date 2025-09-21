@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../common/app_colors.dart';
 
 class StudentAnalyticsScreen extends StatefulWidget {
-  const StudentAnalyticsScreen({Key? key}) : super(key: key);
+  const StudentAnalyticsScreen({super.key});
 
   @override
   State<StudentAnalyticsScreen> createState() => _StudentAnalyticsScreenState();
@@ -73,9 +73,9 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
   Widget _buildHeader() {
     return Container(
       padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: AppColors.primaryGradient,
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
           bottomRight: Radius.circular(30),
         ),
@@ -124,15 +124,20 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: DropdownButton<String>(
                   value: selectedPeriod,
-                  items: ['This Week', 'This Month', 'This Quarter', 'This Year']
-                      .map((String value) {
+                  items: [
+                    'This Week',
+                    'This Month',
+                    'This Quarter',
+                    'This Year'
+                  ].map((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Text(
@@ -170,17 +175,24 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
       margin: const EdgeInsets.all(24),
       child: Row(
         children: [
-          Expanded(child: _buildOverviewCard('Study Hours', '48.5h', '+12%', Icons.access_time, AppColors.primary)),
+          Expanded(
+              child: _buildOverviewCard('Study Hours', '48.5h', '+12%',
+                  Icons.access_time, AppColors.primary)),
           const SizedBox(width: 12),
-          Expanded(child: _buildOverviewCard('Avg Score', '87.2%', '+5%', Icons.grade, AppColors.success)),
+          Expanded(
+              child: _buildOverviewCard(
+                  'Avg Score', '87.2%', '+5%', Icons.grade, AppColors.success)),
           const SizedBox(width: 12),
-          Expanded(child: _buildOverviewCard('Streak', '15 days', '+3', Icons.local_fire_department, AppColors.warning)),
+          Expanded(
+              child: _buildOverviewCard('Streak', '15 days', '+3',
+                  Icons.local_fire_department, AppColors.warning)),
         ],
       ),
     );
   }
 
-  Widget _buildOverviewCard(String title, String value, String change, IconData icon, Color color) {
+  Widget _buildOverviewCard(
+      String title, String value, String change, IconData icon, Color color) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -427,7 +439,7 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
             ),
           ),
           const SizedBox(height: 20),
-          ...subjects.map((subject) => _buildSubjectItem(subject)).toList(),
+          ...subjects.map((subject) => _buildSubjectItem(subject)),
         ],
       ),
     );
@@ -436,7 +448,7 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
   Widget _buildSubjectItem(Map<String, dynamic> subject) {
     IconData trendIcon;
     Color trendColor;
-    
+
     switch (subject['trend']) {
       case 'up':
         trendIcon = Icons.trending_up;
@@ -527,10 +539,18 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
   Widget _buildLearningPathCard() {
     final pathItems = [
       {'title': 'AI Fundamentals', 'progress': 1.0, 'status': 'completed'},
-      {'title': 'Machine Learning Basics', 'progress': 1.0, 'status': 'completed'},
+      {
+        'title': 'Machine Learning Basics',
+        'progress': 1.0,
+        'status': 'completed'
+      },
       {'title': 'Deep Learning', 'progress': 0.75, 'status': 'in_progress'},
       {'title': 'Computer Vision', 'progress': 0.3, 'status': 'in_progress'},
-      {'title': 'Natural Language Processing', 'progress': 0.0, 'status': 'not_started'},
+      {
+        'title': 'Natural Language Processing',
+        'progress': 0.0,
+        'status': 'not_started'
+      },
     ];
 
     return Container(
@@ -559,7 +579,7 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
             ),
           ),
           const SizedBox(height: 20),
-          ...pathItems.map((item) => _buildPathItem(item)).toList(),
+          ...pathItems.map((item) => _buildPathItem(item)),
         ],
       ),
     );
@@ -568,7 +588,7 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
   Widget _buildPathItem(Map<String, dynamic> item) {
     Color statusColor;
     IconData statusIcon;
-    
+
     switch (item['status']) {
       case 'completed':
         statusColor = AppColors.success;
@@ -658,7 +678,7 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
             ),
           ),
           const SizedBox(height: 20),
-          ...skills.map((skill) => _buildSkillItem(skill)).toList(),
+          ...skills.map((skill) => _buildSkillItem(skill)),
         ],
       ),
     );
@@ -694,7 +714,7 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
           LinearProgressIndicator(
             value: skill['level'] / 100,
             backgroundColor: AppColors.backgroundTertiary,
-            valueColor: AlwaysStoppedAnimation<Color>(AppColors.accent),
+            valueColor: const AlwaysStoppedAnimation<Color>(AppColors.accent),
           ),
         ],
       ),
@@ -847,7 +867,8 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
             ),
           ),
           const SizedBox(height: 20),
-          ...achievements.map((achievement) => _buildAchievementItem(achievement)).toList(),
+          ...achievements
+              .map((achievement) => _buildAchievementItem(achievement)),
         ],
       ),
     );
@@ -960,7 +981,7 @@ class _StudentAnalyticsScreenState extends State<StudentAnalyticsScreen>
                     gradient: AppColors.accentGradient,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.emoji_events,
                     color: Colors.white,
                     size: 24,

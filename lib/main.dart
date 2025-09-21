@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           scaffoldBackgroundColor: AppColors.backgroundPrimary,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             backgroundColor: AppColors.surfaceLight,
             foregroundColor: AppColors.textPrimary,
             elevation: 0,
@@ -79,13 +79,13 @@ class MyApp extends StatelessWidget {
           ),
           textTheme: GoogleFonts.interTextTheme(
             Theme.of(context).textTheme.copyWith(
-              headlineLarge: TextStyle(color: AppColors.textPrimary),
-              headlineMedium: TextStyle(color: AppColors.textPrimary),
-              headlineSmall: TextStyle(color: AppColors.textPrimary),
-              bodyLarge: TextStyle(color: AppColors.textPrimary),
-              bodyMedium: TextStyle(color: AppColors.textSecondary),
-              bodySmall: TextStyle(color: AppColors.textTertiary),
-            ),
+                  headlineLarge: const TextStyle(color: AppColors.textPrimary),
+                  headlineMedium: const TextStyle(color: AppColors.textPrimary),
+                  headlineSmall: const TextStyle(color: AppColors.textPrimary),
+                  bodyLarge: const TextStyle(color: AppColors.textPrimary),
+                  bodyMedium: const TextStyle(color: AppColors.textSecondary),
+                  bodySmall: const TextStyle(color: AppColors.textTertiary),
+                ),
           ),
         ),
         // home: const PeoplesScreen(),

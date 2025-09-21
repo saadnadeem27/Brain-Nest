@@ -37,7 +37,7 @@ class StaticDataService {
       'title': 'Advanced Mathematics',
       'description': 'Master complex mathematical concepts',
       'icon': Icons.calculate,
-      'color': Color(0xFF6C5CE7),
+      'color': const Color(0xFF6C5CE7),
       'progress': 0.75,
       'totalLessons': 24,
       'completedLessons': 18,
@@ -46,11 +46,11 @@ class StaticDataService {
       'instructor': 'Dr. Sarah Wilson',
     },
     {
-      'id': 'course_002', 
+      'id': 'course_002',
       'title': 'Physics Fundamentals',
       'description': 'Explore the laws of physics',
       'icon': Icons.science,
-      'color': Color(0xFF3742FA),
+      'color': const Color(0xFF3742FA),
       'progress': 0.60,
       'totalLessons': 20,
       'completedLessons': 12,
@@ -60,10 +60,10 @@ class StaticDataService {
     },
     {
       'id': 'course_003',
-      'title': 'Chemistry Essentials', 
+      'title': 'Chemistry Essentials',
       'description': 'Chemical reactions and properties',
       'icon': Icons.biotech,
-      'color': Color(0xFF00D2D3),
+      'color': const Color(0xFF00D2D3),
       'progress': 0.45,
       'totalLessons': 18,
       'completedLessons': 8,
@@ -76,7 +76,7 @@ class StaticDataService {
       'title': 'Biology Deep Dive',
       'description': 'Life sciences and ecosystems',
       'icon': Icons.local_florist,
-      'color': Color(0xFF00E676),
+      'color': const Color(0xFF00E676),
       'progress': 0.80,
       'totalLessons': 22,
       'completedLessons': 17,
@@ -89,7 +89,7 @@ class StaticDataService {
       'title': 'English Literature',
       'description': 'Classic and modern literature analysis',
       'icon': Icons.menu_book,
-      'color': Color(0xFFFF9F43),
+      'color': const Color(0xFFFF9F43),
       'progress': 0.90,
       'totalLessons': 16,
       'completedLessons': 14,
@@ -102,7 +102,7 @@ class StaticDataService {
       'title': 'Computer Science',
       'description': 'Programming and algorithms',
       'icon': Icons.computer,
-      'color': Color(0xFFFC427B),
+      'color': const Color(0xFFFC427B),
       'progress': 0.35,
       'totalLessons': 30,
       'completedLessons': 10,
@@ -125,7 +125,7 @@ class StaticDataService {
       'maxScore': 100,
       'completed': true,
       'icon': Icons.quiz,
-      'color': Color(0xFF6C5CE7),
+      'color': const Color(0xFF6C5CE7),
     },
     {
       'id': 'quiz_002',
@@ -138,7 +138,7 @@ class StaticDataService {
       'maxScore': 100,
       'completed': true,
       'icon': Icons.science,
-      'color': Color(0xFF3742FA),
+      'color': const Color(0xFF3742FA),
     },
     {
       'id': 'quiz_003',
@@ -151,7 +151,7 @@ class StaticDataService {
       'maxScore': 100,
       'completed': false,
       'icon': Icons.biotech,
-      'color': Color(0xFF00D2D3),
+      'color': const Color(0xFF00D2D3),
     },
   ];
 
@@ -162,9 +162,9 @@ class StaticDataService {
       'title': 'New Assignment Available',
       'message': 'Calculus Assignment #3 has been posted',
       'type': 'assignment',
-      'timestamp': DateTime.now().subtract(Duration(hours: 2)),
+      'timestamp': DateTime.now().subtract(const Duration(hours: 2)),
       'icon': Icons.assignment,
-      'color': Color(0xFF6C5CE7),
+      'color': const Color(0xFF6C5CE7),
       'isRead': false,
     },
     {
@@ -172,9 +172,9 @@ class StaticDataService {
       'title': 'Quiz Reminder',
       'message': 'Physics quiz deadline in 2 days',
       'type': 'reminder',
-      'timestamp': DateTime.now().subtract(Duration(hours: 6)),
+      'timestamp': DateTime.now().subtract(const Duration(hours: 6)),
       'icon': Icons.alarm,
-      'color': Color(0xFFFF9F43),
+      'color': const Color(0xFFFF9F43),
       'isRead': false,
     },
     {
@@ -182,9 +182,9 @@ class StaticDataService {
       'title': 'Achievement Unlocked!',
       'message': 'You\'ve completed 5 courses this month',
       'type': 'achievement',
-      'timestamp': DateTime.now().subtract(Duration(days: 1)),
+      'timestamp': DateTime.now().subtract(const Duration(days: 1)),
       'icon': Icons.emoji_events,
-      'color': Color(0xFF00E676),
+      'color': const Color(0xFF00E676),
       'isRead': true,
     },
   ];
@@ -228,18 +228,20 @@ class StaticDataService {
     {
       'id': 'announcement_001',
       'title': 'Mid-term Exam Schedule Released',
-      'content': 'The mid-term examination schedule for all subjects has been released. Please check your individual timetables.',
+      'content':
+          'The mid-term examination schedule for all subjects has been released. Please check your individual timetables.',
       'author': 'Academic Office',
-      'timestamp': DateTime.now().subtract(Duration(days: 2)),
+      'timestamp': DateTime.now().subtract(const Duration(days: 2)),
       'priority': 'high',
       'icon': Icons.campaign,
     },
     {
       'id': 'announcement_002',
       'title': 'New Learning Resources Available',
-      'content': 'We\'ve added new interactive learning modules for Physics and Chemistry. Access them from your dashboard.',
+      'content':
+          'We\'ve added new interactive learning modules for Physics and Chemistry. Access them from your dashboard.',
       'author': 'Learning Team',
-      'timestamp': DateTime.now().subtract(Duration(days: 5)),
+      'timestamp': DateTime.now().subtract(const Duration(days: 5)),
       'priority': 'medium',
       'icon': Icons.library_books,
     },
@@ -279,7 +281,7 @@ class StaticDataService {
       'subject': 'Mathematics',
       'description': 'Collaborative learning for calculus and beyond',
       'icon': Icons.group,
-      'color': Color(0xFF6C5CE7),
+      'color': const Color(0xFF6C5CE7),
       'isJoined': true,
     },
     {
@@ -289,7 +291,7 @@ class StaticDataService {
       'subject': 'Physics',
       'description': 'Tackle challenging physics problems together',
       'icon': Icons.group,
-      'color': Color(0xFF3742FA),
+      'color': const Color(0xFF3742FA),
       'isJoined': false,
     },
   ];
@@ -300,23 +302,23 @@ class StaticDataService {
       'id': 'event_001',
       'title': 'Mathematics Class',
       'subject': 'Mathematics',
-      'startTime': DateTime.now().add(Duration(hours: 2)),
-      'endTime': DateTime.now().add(Duration(hours: 3)),
+      'startTime': DateTime.now().add(const Duration(hours: 2)),
+      'endTime': DateTime.now().add(const Duration(hours: 3)),
       'type': 'class',
       'location': 'Room 101',
       'icon': Icons.calculate,
-      'color': Color(0xFF6C5CE7),
+      'color': const Color(0xFF6C5CE7),
     },
     {
       'id': 'event_002',
       'title': 'Physics Lab',
       'subject': 'Physics',
-      'startTime': DateTime.now().add(Duration(days: 1, hours: 1)),
-      'endTime': DateTime.now().add(Duration(days: 1, hours: 3)),
+      'startTime': DateTime.now().add(const Duration(days: 1, hours: 1)),
+      'endTime': DateTime.now().add(const Duration(days: 1, hours: 3)),
       'type': 'lab',
       'location': 'Physics Lab A',
       'icon': Icons.science,
-      'color': Color(0xFF3742FA),
+      'color': const Color(0xFF3742FA),
     },
   ];
 
@@ -324,7 +326,7 @@ class StaticDataService {
   static Map<String, dynamic> premiumFeatures = {
     'isSubscribed': true,
     'planName': 'Premium Pro',
-    'expiryDate': DateTime.now().add(Duration(days: 90)),
+    'expiryDate': DateTime.now().add(const Duration(days: 90)),
     'features': [
       'Unlimited course access',
       'AI-powered study assistant',
@@ -337,27 +339,28 @@ class StaticDataService {
 
   // Methods to simulate API calls
   static Future<List<Map<String, dynamic>>> getCourses() async {
-    await Future.delayed(Duration(milliseconds: 500)); // Simulate network delay
+    await Future.delayed(
+        const Duration(milliseconds: 500)); // Simulate network delay
     return courses;
   }
 
   static Future<List<Map<String, dynamic>>> getQuizzes() async {
-    await Future.delayed(Duration(milliseconds: 300));
+    await Future.delayed(const Duration(milliseconds: 300));
     return quizzes;
   }
 
   static Future<List<Map<String, dynamic>>> getNotifications() async {
-    await Future.delayed(Duration(milliseconds: 200));
+    await Future.delayed(const Duration(milliseconds: 200));
     return notifications;
   }
 
   static Future<Map<String, dynamic>> getUserProfile() async {
-    await Future.delayed(Duration(milliseconds: 400));
+    await Future.delayed(const Duration(milliseconds: 400));
     return currentUser;
   }
 
   static Future<Map<String, dynamic>> getDashboardStats() async {
-    await Future.delayed(Duration(milliseconds: 350));
+    await Future.delayed(const Duration(milliseconds: 350));
     return dashboardStats;
   }
 
@@ -377,7 +380,9 @@ class StaticDataService {
   }
 
   List<Map<String, dynamic>> getActiveCourses() {
-    return courses.where((course) => course['progress'] > 0 && course['progress'] < 1).toList();
+    return courses
+        .where((course) => course['progress'] > 0 && course['progress'] < 1)
+        .toList();
   }
 
   List<Map<String, dynamic>> getRecentLearningActivities() {
@@ -476,7 +481,8 @@ class StaticDataService {
       {
         'id': 'course_002',
         'title': 'Statistics & Probability',
-        'description': 'Introduction to statistical analysis and probability theory',
+        'description':
+            'Introduction to statistical analysis and probability theory',
         'students': 32,
         'semester': 'Fall 2024',
         'schedule': 'TTh 2:00-3:30 PM',

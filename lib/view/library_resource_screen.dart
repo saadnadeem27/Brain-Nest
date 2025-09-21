@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../common/app_colors.dart';
 
 class LibraryResourceScreen extends StatefulWidget {
-  const LibraryResourceScreen({Key? key}) : super(key: key);
+  const LibraryResourceScreen({super.key});
 
   @override
   State<LibraryResourceScreen> createState() => _LibraryResourceScreenState();
@@ -74,9 +74,9 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
   Widget _buildHeader() {
     return Container(
       padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: AppColors.primaryGradient,
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
           bottomRight: Radius.circular(30),
         ),
@@ -163,9 +163,10 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
         decoration: InputDecoration(
           hintText: 'Search resources, videos, documents...',
           hintStyle: GoogleFonts.inter(color: AppColors.textSecondary),
-          prefixIcon: Icon(Icons.search, color: AppColors.textSecondary),
+          prefixIcon: const Icon(Icons.search, color: AppColors.textSecondary),
           border: InputBorder.none,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         ),
       ),
     );
@@ -216,9 +217,11 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
         const SizedBox(height: 24),
         _buildCategorySection('🎥 Video Lectures', _buildVideoLectures()),
         const SizedBox(height: 24),
-        _buildCategorySection('📄 Reference Documents', _buildReferenceDocuments()),
+        _buildCategorySection(
+            '📄 Reference Documents', _buildReferenceDocuments()),
         const SizedBox(height: 24),
-        _buildCategorySection('🔗 External Resources', _buildExternalResources()),
+        _buildCategorySection(
+            '🔗 External Resources', _buildExternalResources()),
       ],
     );
   }
@@ -396,7 +399,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                 const SizedBox(height: 8),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.play_circle_outline,
                       size: 14,
                       color: AppColors.textTertiary,
@@ -414,7 +417,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                 const SizedBox(height: 4),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.storage,
                       size: 14,
                       color: AppColors.textTertiary,
@@ -474,7 +477,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                 color: Colors.white.withOpacity(0.9),
                 borderRadius: BorderRadius.circular(25),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.play_arrow,
                 size: 30,
                 color: AppColors.primary,
@@ -542,7 +545,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
               color: AppColors.error.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Icon(
+            child: const Icon(
               Icons.picture_as_pdf,
               color: AppColors.error,
               size: 20,
@@ -578,7 +581,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.download,
               color: AppColors.primary,
             ),
@@ -635,7 +638,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
               color: AppColors.accent.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Icon(
+            child: const Icon(
               Icons.link,
               color: AppColors.accent,
               size: 20,
@@ -659,7 +662,8 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
                         color: AppColors.accent.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(12),
@@ -697,7 +701,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.open_in_new,
               color: AppColors.primary,
             ),
@@ -734,7 +738,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
 
     final video = videos[index % videos.length];
     Color levelColor;
-    
+
     switch (video['level']) {
       case 'Beginner':
         levelColor = AppColors.success;
@@ -785,7 +789,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                       color: Colors.white.withOpacity(0.9),
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.play_arrow,
                       size: 36,
                       color: AppColors.primary,
@@ -796,7 +800,8 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                   bottom: 8,
                   right: 8,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.7),
                       borderRadius: BorderRadius.circular(12),
@@ -815,7 +820,8 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                   top: 8,
                   left: 8,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: levelColor.withOpacity(0.9),
                       borderRadius: BorderRadius.circular(12),
@@ -833,7 +839,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
               ],
             ),
           ),
-          
+
           // Video Info
           Padding(
             padding: const EdgeInsets.all(16),
@@ -851,7 +857,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                 const SizedBox(height: 8),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.person,
                       size: 16,
                       color: AppColors.textSecondary,
@@ -865,7 +871,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                       ),
                     ),
                     const Spacer(),
-                    Icon(
+                    const Icon(
                       Icons.visibility,
                       size: 16,
                       color: AppColors.textTertiary,
@@ -941,7 +947,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
               color: AppColors.error.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Icon(
+            child: const Icon(
               Icons.picture_as_pdf,
               color: AppColors.error,
               size: 30,
@@ -965,7 +971,8 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
                         color: AppColors.primary.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(12),
@@ -999,7 +1006,8 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                         color: AppColors.textTertiary,
                       ),
                     ),
-                    Text(' • ', style: TextStyle(color: AppColors.textTertiary)),
+                    const Text(' • ',
+                        style: TextStyle(color: AppColors.textTertiary)),
                     Text(
                       document['size'] as String,
                       style: GoogleFonts.inter(
@@ -1016,14 +1024,14 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.download,
                   color: AppColors.primary,
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.bookmark_outline,
                   color: AppColors.textSecondary,
                 ),
@@ -1087,7 +1095,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                 width: 50,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: isCompleted 
+                  color: isCompleted
                       ? AppColors.success.withOpacity(0.1)
                       : AppColors.primary.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(25),
@@ -1121,7 +1129,8 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                             color: AppColors.textSecondary,
                           ),
                         ),
-                        Text(' • ', style: TextStyle(color: AppColors.textTertiary)),
+                        const Text(' • ',
+                            style: TextStyle(color: AppColors.textTertiary)),
                         Text(
                           download['date'] as String,
                           style: GoogleFonts.inter(
@@ -1137,7 +1146,7 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
               if (isCompleted)
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.open_in_new,
                     color: AppColors.primary,
                   ),
@@ -1173,7 +1182,8 @@ class _LibraryResourceScreenState extends State<LibraryResourceScreen>
                 LinearProgressIndicator(
                   value: download['progress'] as double,
                   backgroundColor: AppColors.backgroundTertiary,
-                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+                  valueColor:
+                      const AlwaysStoppedAnimation<Color>(AppColors.primary),
                 ),
               ],
             ),

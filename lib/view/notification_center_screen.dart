@@ -4,10 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../common/app_colors.dart';
 
 class NotificationCenterScreen extends StatefulWidget {
-  const NotificationCenterScreen({Key? key}) : super(key: key);
+  const NotificationCenterScreen({super.key});
 
   @override
-  State<NotificationCenterScreen> createState() => _NotificationCenterScreenState();
+  State<NotificationCenterScreen> createState() =>
+      _NotificationCenterScreenState();
 }
 
 class _NotificationCenterScreenState extends State<NotificationCenterScreen>
@@ -218,7 +219,8 @@ class _NotificationCenterScreenState extends State<NotificationCenterScreen>
         'icon': Icons.school,
         'color': AppColors.primary,
         'title': 'New course available',
-        'subtitle': 'Machine Learning Fundamentals is now available for enrollment',
+        'subtitle':
+            'Machine Learning Fundamentals is now available for enrollment',
         'time': '2 hours ago',
       },
       {
@@ -263,7 +265,8 @@ class _NotificationCenterScreenState extends State<NotificationCenterScreen>
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: isRead ? Colors.transparent : AppColors.primary.withOpacity(0.3),
+          color:
+              isRead ? Colors.transparent : AppColors.primary.withOpacity(0.3),
           width: 2,
         ),
         boxShadow: [
@@ -356,19 +359,22 @@ class _NotificationCenterScreenState extends State<NotificationCenterScreen>
     final announcements = [
       {
         'title': 'Platform Maintenance Scheduled',
-        'content': 'The platform will undergo maintenance on Sunday, 2 AM - 4 AM EST. Some services may be temporarily unavailable.',
+        'content':
+            'The platform will undergo maintenance on Sunday, 2 AM - 4 AM EST. Some services may be temporarily unavailable.',
         'priority': 'high',
         'date': '2025-01-15',
       },
       {
         'title': 'New AI Course Series Launch',
-        'content': 'We\'re excited to announce our new AI course series covering GPT, Computer Vision, and Neural Networks.',
+        'content':
+            'We\'re excited to announce our new AI course series covering GPT, Computer Vision, and Neural Networks.',
         'priority': 'medium',
         'date': '2025-01-14',
       },
       {
         'title': 'Winter Break Schedule',
-        'content': 'Please note the modified support hours during winter break. Emergency support remains available 24/7.',
+        'content':
+            'Please note the modified support hours during winter break. Emergency support remains available 24/7.',
         'priority': 'low',
         'date': '2025-01-12',
       },
@@ -560,7 +566,7 @@ class _NotificationCenterScreenState extends State<NotificationCenterScreen>
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.more_vert,
               color: AppColors.textSecondary,
             ),

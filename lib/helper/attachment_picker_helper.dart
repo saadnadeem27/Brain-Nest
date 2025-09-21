@@ -1,6 +1,9 @@
+import 'dart:developer';
 import 'dart:io';
-import 'package:Vadai/common_imports.dart';
+import 'package:brain_nest/common/app_colors.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as path;
 
@@ -64,28 +67,30 @@ class AttachmentPickerHelper {
       // Show a dialog to choose source
       final source = await Get.dialog<String>(
         AlertDialog(
-          title: Text('Choose File Type'),
+          title: const Text('Choose File Type'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
-                leading: Icon(Icons.image, color: AppColors.blueColor),
-                title: Text('Image from Gallery'),
+                leading: const Icon(Icons.image, color: AppColors.blueColor),
+                title: const Text('Image from Gallery'),
                 onTap: () => Get.back(result: 'gallery'),
               ),
               ListTile(
-                leading: Icon(Icons.camera_alt, color: AppColors.blueColor),
-                title: Text('Take Photo'),
+                leading:
+                    const Icon(Icons.camera_alt, color: AppColors.blueColor),
+                title: const Text('Take Photo'),
                 onTap: () => Get.back(result: 'camera'),
               ),
               ListTile(
-                leading: Icon(Icons.file_copy, color: AppColors.blueColor),
-                title: Text('Document'),
+                leading:
+                    const Icon(Icons.file_copy, color: AppColors.blueColor),
+                title: const Text('Document'),
                 onTap: () => Get.back(result: 'document'),
               ),
               ListTile(
-                leading: Icon(Icons.link, color: AppColors.blueColor),
-                title: Text('Link'),
+                leading: const Icon(Icons.link, color: AppColors.blueColor),
+                title: const Text('Link'),
                 onTap: () => Get.back(result: 'link'),
               ),
             ],
@@ -129,12 +134,12 @@ class AttachmentPickerHelper {
           // Show dialog to enter link
           final result = await Get.dialog<Map<String, String>>(
             AlertDialog(
-              title: Text('Enter Link'),
+              title: const Text('Enter Link'),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'URL',
                       hintText: 'https://example.com',
                     ),
@@ -145,7 +150,8 @@ class AttachmentPickerHelper {
                 ],
               ),
               actions: [
-                TextButton(onPressed: () => Get.back(), child: Text('Cancel')),
+                TextButton(
+                    onPressed: () => Get.back(), child: const Text('Cancel')),
                 TextButton(
                   onPressed: () {
                     final textController =
@@ -158,7 +164,7 @@ class AttachmentPickerHelper {
                       );
                     }
                   },
-                  child: Text('Add'),
+                  child: const Text('Add'),
                 ),
               ],
             ),
@@ -176,18 +182,16 @@ class AttachmentPickerHelper {
           return null;
       }
 
-      if (file == null && link == null) return null;
+      if (file == null) return null;
 
       // Upload file to server
-      if (file != null) {
-        final uploadResult = await _uploadFile(file);
-        if (uploadResult != null) {
-          return {
-            'type': type,
-            'url': uploadResult['url'],
-            'name': path.basename(file.path),
-          };
-        }
+      final uploadResult = await _uploadFile(file);
+      if (uploadResult != null) {
+        return {
+          'type': type,
+          'url': uploadResult['url'],
+          'name': path.basename(file.path),
+        };
       }
     } catch (e) {
       log('Error in pickAndUploadFile: $e');
@@ -201,7 +205,8 @@ class AttachmentPickerHelper {
       // TODO: Implement file upload to your server
       // For now, let's simulate an upload
 
-      await Future.delayed(Duration(seconds: 2)); // Simulate network delay
+      await Future.delayed(
+          const Duration(seconds: 2)); // Simulate network delay
 
       // Return a fake URL for demonstration
       return {

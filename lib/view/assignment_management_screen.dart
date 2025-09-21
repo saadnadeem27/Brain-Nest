@@ -4,10 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../common/app_colors.dart';
 
 class AssignmentManagementScreen extends StatefulWidget {
-  const AssignmentManagementScreen({Key? key}) : super(key: key);
+  const AssignmentManagementScreen({super.key});
 
   @override
-  State<AssignmentManagementScreen> createState() => _AssignmentManagementScreenState();
+  State<AssignmentManagementScreen> createState() =>
+      _AssignmentManagementScreenState();
 }
 
 class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
@@ -83,9 +84,9 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
   Widget _buildHeader() {
     return Container(
       padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: AppColors.primaryGradient,
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
           bottomRight: Radius.circular(30),
         ),
@@ -158,17 +159,24 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
       margin: const EdgeInsets.all(24),
       child: Row(
         children: [
-          Expanded(child: _buildStatCard('24', 'Active\nAssignments', Icons.assignment, AppColors.primary)),
+          Expanded(
+              child: _buildStatCard('24', 'Active\nAssignments',
+                  Icons.assignment, AppColors.primary)),
           const SizedBox(width: 16),
-          Expanded(child: _buildStatCard('12', 'Pending\nGrading', Icons.rate_review, AppColors.warning)),
+          Expanded(
+              child: _buildStatCard('12', 'Pending\nGrading', Icons.rate_review,
+                  AppColors.warning)),
           const SizedBox(width: 16),
-          Expanded(child: _buildStatCard('156', 'Total\nSubmissions', Icons.upload, AppColors.success)),
+          Expanded(
+              child: _buildStatCard('156', 'Total\nSubmissions', Icons.upload,
+                  AppColors.success)),
         ],
       ),
     );
   }
 
-  Widget _buildStatCard(String value, String label, IconData icon, Color color) {
+  Widget _buildStatCard(
+      String value, String label, IconData icon, Color color) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -288,11 +296,14 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
       padding: const EdgeInsets.all(24),
       child: Column(
         children: [
-          _buildAnalyticsCard('Submission Rate', '87%', Icons.trending_up, AppColors.success),
+          _buildAnalyticsCard(
+              'Submission Rate', '87%', Icons.trending_up, AppColors.success),
           const SizedBox(height: 16),
-          _buildAnalyticsCard('Average Score', '82.5', Icons.grade, AppColors.primary),
+          _buildAnalyticsCard(
+              'Average Score', '82.5', Icons.grade, AppColors.primary),
           const SizedBox(height: 16),
-          _buildAnalyticsCard('On-Time Submissions', '92%', Icons.schedule, AppColors.accent),
+          _buildAnalyticsCard(
+              'On-Time Submissions', '92%', Icons.schedule, AppColors.accent),
           const SizedBox(height: 24),
           _buildPerformanceChart(),
         ],
@@ -334,7 +345,9 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: isUrgent ? AppColors.warning.withOpacity(0.3) : Colors.transparent,
+          color: isUrgent
+              ? AppColors.warning.withOpacity(0.3)
+              : Colors.transparent,
           width: 2,
         ),
         boxShadow: [
@@ -382,7 +395,8 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
                     ),
                     if (isUrgent)
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: AppColors.warning.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(12),
@@ -401,13 +415,15 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
                 const SizedBox(height: 16),
                 Row(
                   children: [
-                    _buildInfoChip(assignment['dueDate'] as String, Icons.schedule),
+                    _buildInfoChip(
+                        assignment['dueDate'] as String, Icons.schedule),
                     const SizedBox(width: 12),
-                    _buildInfoChip(assignment['submissions'] as String, Icons.people),
+                    _buildInfoChip(
+                        assignment['submissions'] as String, Icons.people),
                     const Spacer(),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.more_vert,
                         color: AppColors.textSecondary,
                       ),
@@ -583,7 +599,9 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
             width: 50,
             height: 50,
             decoration: BoxDecoration(
-              color: isGraded ? AppColors.success.withOpacity(0.1) : AppColors.warning.withOpacity(0.1),
+              color: isGraded
+                  ? AppColors.success.withOpacity(0.1)
+                  : AppColors.warning.withOpacity(0.1),
               borderRadius: BorderRadius.circular(25),
             ),
             child: Icon(
@@ -627,11 +645,15 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: isGraded ? AppColors.success.withOpacity(0.1) : AppColors.warning.withOpacity(0.1),
+              color: isGraded
+                  ? AppColors.success.withOpacity(0.1)
+                  : AppColors.warning.withOpacity(0.1),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(
-              isGraded ? '${submission['grade']}/100' : submission['grade'] as String,
+              isGraded
+                  ? '${submission['grade']}/100'
+                  : submission['grade'] as String,
               style: GoogleFonts.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
@@ -644,7 +666,8 @@ class _AssignmentManagementScreenState extends State<AssignmentManagementScreen>
     );
   }
 
-  Widget _buildAnalyticsCard(String title, String value, IconData icon, Color color) {
+  Widget _buildAnalyticsCard(
+      String title, String value, IconData icon, Color color) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(24),

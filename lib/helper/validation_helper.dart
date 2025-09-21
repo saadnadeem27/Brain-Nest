@@ -1,4 +1,4 @@
-import 'package:Vadai/common/App_strings.dart';
+import 'package:brain_nest/common/App_strings.dart';
 
 class ValidationHelper {
   static const String patternEmail =

@@ -3,7 +3,7 @@ import '../../services/static_data_service.dart';
 
 class LearnerHomeController extends GetxController {
   final StaticDataService _dataService = StaticDataService();
-  
+
   var isLoading = false.obs;
   var learnerProfile = {}.obs;
   var activeCourses = <Map<String, dynamic>>[].obs;
@@ -22,19 +22,18 @@ class LearnerHomeController extends GetxController {
     try {
       // Load learner profile
       learnerProfile.value = _dataService.getLearnerProfile();
-      
+
       // Load active courses
       activeCourses.value = _dataService.getActiveCourses();
-      
+
       // Load recent activities
       recentActivities.value = _dataService.getRecentLearningActivities();
-      
+
       // Load learning statistics
       learningStats.value = _dataService.getLearningStatistics();
-      
+
       // Load upcoming events
       upcomingEvents.value = _dataService.getUpcomingEvents();
-      
     } catch (e) {
       Get.snackbar('Error', 'Failed to load dashboard data');
     } finally {
@@ -45,7 +44,7 @@ class LearnerHomeController extends GetxController {
   Future<void> refreshData() async {
     // Simulate refresh delay
     await Future.delayed(const Duration(seconds: 1));
-    
+
     // Reload dashboard data
     loadDashboardData();
   }
@@ -60,7 +59,11 @@ class LearnerHomeController extends GetxController {
   }
 
   void viewAllCourses() {
-    Get.toNamed('/courses');
+    Get.toNamed('/learner-courses');
+  }
+
+  void viewAllAssignments() {
+    Get.toNamed('/learner-assignments');
   }
 
   void viewProfile() {
@@ -69,5 +72,13 @@ class LearnerHomeController extends GetxController {
 
   void viewSettings() {
     Get.toNamed('/learner-settings');
+  }
+
+  void navigateToAnalytics() {
+    Get.toNamed('/student-analytics');
+  }
+
+  void navigateToLibrary() {
+    Get.toNamed('/library-resources');
   }
 }

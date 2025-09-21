@@ -1,4 +1,8 @@
-import 'package:Vadai/common_imports.dart';
+import 'package:brain_nest/common/assets.dart';
+import 'package:brain_nest/common/common_widgets.dart';
+import 'package:brain_nest/common/size_config.dart';
+import 'package:brain_nest/common/text_style.dart';
+import 'package:brain_nest/common_imports.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/foundation.dart';

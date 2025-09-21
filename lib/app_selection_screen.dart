@@ -5,7 +5,7 @@ import 'common/app_colors.dart';
 import 'routes.dart';
 
 class AppSelectionScreen extends StatefulWidget {
-  const AppSelectionScreen({Key? key}) : super(key: key);
+  const AppSelectionScreen({super.key});
 
   @override
   State<AppSelectionScreen> createState() => _AppSelectionScreenState();
@@ -37,7 +37,8 @@ class _AppSelectionScreenState extends State<AppSelectionScreen>
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0, 0.5),
       end: Offset.zero,
-    ).animate(CurvedAnimation(parent: _slideController, curve: Curves.elasticOut));
+    ).animate(
+        CurvedAnimation(parent: _slideController, curve: Curves.elasticOut));
 
     _startAnimations();
   }
@@ -58,7 +59,7 @@ class _AppSelectionScreenState extends State<AppSelectionScreen>
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -113,7 +114,7 @@ class _AppSelectionScreenState extends State<AppSelectionScreen>
                             ),
                           ),
                           const SizedBox(height: 24),
-                          
+
                           // App Name
                           Text(
                             'Brain Nest',
@@ -131,7 +132,7 @@ class _AppSelectionScreenState extends State<AppSelectionScreen>
                             ),
                           ),
                           const SizedBox(height: 8),
-                          
+
                           // Tagline
                           Text(
                             'Choose your learning journey',
@@ -144,7 +145,7 @@ class _AppSelectionScreenState extends State<AppSelectionScreen>
                         ],
                       ),
                     ),
-                    
+
                     // Selection Cards
                     Expanded(
                       flex: 3,
@@ -154,7 +155,8 @@ class _AppSelectionScreenState extends State<AppSelectionScreen>
                           // Student Card
                           _buildRoleCard(
                             title: 'Student Portal',
-                            subtitle: 'Access courses, assignments, and track your progress',
+                            subtitle:
+                                'Access courses, assignments, and track your progress',
                             icon: Icons.school,
                             gradient: const LinearGradient(
                               colors: [
@@ -162,15 +164,17 @@ class _AppSelectionScreenState extends State<AppSelectionScreen>
                                 Color(0xFF764ba2),
                               ],
                             ),
-                            onTap: () => Get.toNamed(AppRoutes.learnerDashboard),
+                            onTap: () =>
+                                Get.toNamed(AppRoutes.learnerDashboard),
                           ),
-                          
+
                           const SizedBox(height: 20),
-                          
+
                           // Teacher Card
                           _buildRoleCard(
                             title: 'Educator Portal',
-                            subtitle: 'Manage courses, track student progress, and create content',
+                            subtitle:
+                                'Manage courses, track student progress, and create content',
                             icon: Icons.person,
                             gradient: const LinearGradient(
                               colors: [
@@ -178,12 +182,13 @@ class _AppSelectionScreenState extends State<AppSelectionScreen>
                                 Color(0xFF8b5cf6),
                               ],
                             ),
-                            onTap: () => Get.toNamed(AppRoutes.educatorDashboard),
+                            onTap: () =>
+                                Get.toNamed(AppRoutes.educatorDashboard),
                           ),
                         ],
                       ),
                     ),
-                    
+
                     // Footer
                     Expanded(
                       flex: 1,

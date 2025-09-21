@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../common/app_colors.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -182,7 +182,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             ],
           ),
           const SizedBox(height: 16),
-          
+
           // Name and Email
           Text(
             'Alex Johnson',
@@ -201,7 +201,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             ),
           ),
           const SizedBox(height: 16),
-          
+
           // Status Badge
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -239,11 +239,15 @@ class _ProfileScreenState extends State<ProfileScreen>
       margin: const EdgeInsets.all(24),
       child: Row(
         children: [
-          Expanded(child: _buildStatCard('12', 'Courses\nCompleted', Icons.school)),
+          Expanded(
+              child: _buildStatCard('12', 'Courses\nCompleted', Icons.school)),
           const SizedBox(width: 16),
-          Expanded(child: _buildStatCard('248', 'Hours\nLearned', Icons.access_time)),
+          Expanded(
+              child:
+                  _buildStatCard('248', 'Hours\nLearned', Icons.access_time)),
           const SizedBox(width: 16),
-          Expanded(child: _buildStatCard('95%', 'Success\nRate', Icons.trending_up)),
+          Expanded(
+              child: _buildStatCard('95%', 'Success\nRate', Icons.trending_up)),
         ],
       ),
     );
@@ -441,7 +445,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                     style: GoogleFonts.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: isDestructive ? AppColors.error : AppColors.textPrimary,
+                      color: isDestructive
+                          ? AppColors.error
+                          : AppColors.textPrimary,
                     ),
                   ),
                   const SizedBox(height: 2),
@@ -455,7 +461,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                 ],
               ),
             ),
-            Icon(
+            const Icon(
               Icons.arrow_forward_ios,
               size: 16,
               color: AppColors.textSecondary,

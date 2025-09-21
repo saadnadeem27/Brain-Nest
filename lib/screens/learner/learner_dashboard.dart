@@ -6,7 +6,7 @@ import '../../components/ui_components.dart';
 import '../../controllers/learner/learner_home_controller.dart';
 
 class LearnerDashboard extends StatelessWidget {
-  const LearnerDashboard({Key? key}) : super(key: key);
+  const LearnerDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +48,8 @@ class LearnerDashboard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildWelcomeSection(controller),
+                          const SizedBox(height: 24),
+                          _buildQuickActions(controller),
                           const SizedBox(height: 24),
                           _buildQuickStats(controller),
                           const SizedBox(height: 24),
@@ -91,7 +93,7 @@ class LearnerDashboard extends StatelessWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       flexibleSpace: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: AppColors.primaryGradient,
         ),
         child: FlexibleSpaceBar(
@@ -121,76 +123,79 @@ class LearnerDashboard extends StatelessWidget {
   }
 
   Widget _buildWelcomeSection(LearnerHomeController controller) {
-    final profile = controller.learnerProfile.value;
-    
-    return GradientCard(
-      colors: [
-        AppColors.accent.withOpacity(0.1),
-        AppColors.primary.withOpacity(0.05),
-      ],
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundColor: AppColors.primary,
-            child: Text(
-              (profile['name'] ?? 'L').toString().substring(0, 1).toUpperCase(),
-              style: GoogleFonts.inter(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+    return Obx(() {
+      final profile = controller.learnerProfile.value;
+
+      return GradientCard(
+        colors: [
+          AppColors.primary.withOpacity(0.1),
+          AppColors.accent.withOpacity(0.05),
+        ],
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 30,
+              backgroundColor: AppColors.primary,
+              child: Text(
+                (profile['name'] ?? 'L')
+                    .toString()
+                    .substring(0, 1)
+                    .toUpperCase(),
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Welcome back, ${profile['name'] ?? 'Learner'}!',
-                  style: GoogleFonts.inter(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Welcome back, ${profile['name'] ?? 'Learner'}!',
+                    style: GoogleFonts.inter(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.textPrimary,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  'Ready to continue your learning journey?',
-                  style: GoogleFonts.inter(
-                    fontSize: 14,
-                    color: AppColors.textSecondary,
+                  const SizedBox(height: 4),
+                  Text(
+                    'Ready to continue your learning journey?',
+                    style: GoogleFonts.inter(
+                      fontSize: 14,
+                      color: AppColors.textSecondary,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: AppColors.accent.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(12),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: AppColors.accent.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(
+                Icons.psychology,
+                color: AppColors.accent,
+                size: 24,
+              ),
             ),
-            child: Icon(
-              Icons.psychology,
-              color: AppColors.accent,
-              size: 24,
-            ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
+    });
   }
 
-  Widget _buildQuickStats(LearnerHomeController controller) {
-    final stats = controller.learningStats.value;
-    
+  Widget _buildQuickActions(LearnerHomeController controller) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Your Progress',
+          'Quick Actions',
           style: GoogleFonts.inter(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -198,50 +203,190 @@ class LearnerDashboard extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        GridView.count(
-          crossAxisCount: 2,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          childAspectRatio: 1.2,
+        Row(
           children: [
-            StatisticCard(
-              title: 'Courses Completed',
-              value: '${stats['coursesCompleted'] ?? 0}',
-              icon: Icons.school,
-              iconColor: AppColors.primary,
-              trend: '+2',
-              isPositiveTrend: true,
+            Expanded(
+              child: GradientCard(
+                onTap: () => controller.viewAllCourses(),
+                colors: [
+                  AppColors.primary.withOpacity(0.1),
+                  AppColors.primary.withOpacity(0.05),
+                ],
+                child: Column(
+                  children: [
+                    const Icon(
+                      Icons.school,
+                      size: 32,
+                      color: AppColors.primary,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'My Courses',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            StatisticCard(
-              title: 'Learning Hours',
-              value: '${stats['totalHours'] ?? 0}h',
-              icon: Icons.access_time,
-              iconColor: AppColors.accent,
-              trend: '+5h',
-              isPositiveTrend: true,
+            const SizedBox(width: 12),
+            Expanded(
+              child: GradientCard(
+                onTap: () => controller.viewAllAssignments(),
+                colors: [
+                  AppColors.accent.withOpacity(0.1),
+                  AppColors.accent.withOpacity(0.05),
+                ],
+                child: Column(
+                  children: [
+                    const Icon(
+                      Icons.assignment,
+                      size: 32,
+                      color: AppColors.accent,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Assignments',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            StatisticCard(
-              title: 'Achievements',
-              value: '${stats['achievements'] ?? 0}',
-              icon: Icons.emoji_events,
-              iconColor: Colors.orange,
-              trend: '+1',
-              isPositiveTrend: true,
+            const SizedBox(width: 12),
+            Expanded(
+              child: GradientCard(
+                onTap: () => controller.navigateToAnalytics(),
+                colors: [
+                  Colors.orange.withOpacity(0.1),
+                  Colors.orange.withOpacity(0.05),
+                ],
+                child: Column(
+                  children: [
+                    const Icon(
+                      Icons.analytics,
+                      size: 32,
+                      color: Colors.orange,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Progress',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            StatisticCard(
-              title: 'Streak Days',
-              value: '${stats['streakDays'] ?? 0}',
-              icon: Icons.local_fire_department,
-              iconColor: Colors.red,
-              trend: '+3',
-              isPositiveTrend: true,
+            const SizedBox(width: 12),
+            Expanded(
+              child: GradientCard(
+                onTap: () => controller.navigateToLibrary(),
+                colors: [
+                  Colors.green.withOpacity(0.1),
+                  Colors.green.withOpacity(0.05),
+                ],
+                child: Column(
+                  children: [
+                    const Icon(
+                      Icons.library_books,
+                      size: 32,
+                      color: Colors.green,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Library',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
       ],
     );
+  }
+
+  Widget _buildQuickStats(LearnerHomeController controller) {
+    return Obx(() {
+      final stats = controller.learningStats.value;
+
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Your Progress',
+            style: GoogleFonts.inter(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textPrimary,
+            ),
+          ),
+          const SizedBox(height: 16),
+          GridView.count(
+            crossAxisCount: 2,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+            childAspectRatio: 1.2,
+            children: [
+              StatisticCard(
+                title: 'Courses Completed',
+                value: '${stats['coursesCompleted'] ?? 0}',
+                icon: Icons.school,
+                iconColor: AppColors.primary,
+                trend: '+2',
+                isPositiveTrend: true,
+              ),
+              StatisticCard(
+                title: 'Learning Hours',
+                value: '${stats['totalHours'] ?? 0}h',
+                icon: Icons.access_time,
+                iconColor: AppColors.accent,
+                trend: '+5h',
+                isPositiveTrend: true,
+              ),
+              StatisticCard(
+                title: 'Achievements',
+                value: '${stats['achievements'] ?? 0}',
+                icon: Icons.emoji_events,
+                iconColor: Colors.orange,
+                trend: '+1',
+                isPositiveTrend: true,
+              ),
+              StatisticCard(
+                title: 'Streak Days',
+                value: '${stats['streakDays'] ?? 0}',
+                icon: Icons.local_fire_department,
+                iconColor: Colors.red,
+                trend: '+3',
+                isPositiveTrend: true,
+              ),
+            ],
+          ),
+        ],
+      );
+    });
   }
 
   Widget _buildActiveCoursesSection(LearnerHomeController controller) {
@@ -284,7 +429,8 @@ class LearnerDashboard extends StatelessWidget {
                 margin: const EdgeInsets.only(right: 16),
                 child: ProgressIndicatorCard(
                   title: course['title'] ?? '',
-                  subtitle: '${course['lessonsCompleted']}/${course['totalLessons']} lessons',
+                  subtitle:
+                      '${course['lessonsCompleted']}/${course['totalLessons']} lessons',
                   progress: (course['progress'] ?? 0.0) / 100.0,
                   icon: Icons.book,
                   progressColor: AppColors.accent,
@@ -352,7 +498,7 @@ class LearnerDashboard extends StatelessWidget {
                 child: LinearProgressIndicator(
                   value: 0.8,
                   backgroundColor: Colors.grey[300],
-                  valueColor: AlwaysStoppedAnimation(AppColors.accent),
+                  valueColor: const AlwaysStoppedAnimation(AppColors.accent),
                   minHeight: 8,
                 ),
               ),
@@ -422,7 +568,7 @@ class LearnerDashboard extends StatelessWidget {
               ),
             ),
           );
-        }).toList(),
+        }),
       ],
     );
   }
@@ -456,7 +602,7 @@ class LearnerDashboard extends StatelessWidget {
                       gradient: AppColors.accentGradient,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.event,
                       color: Colors.white,
                       size: 24,
@@ -486,7 +632,7 @@ class LearnerDashboard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
+                  const Icon(
                     Icons.arrow_forward_ios,
                     color: AppColors.accent,
                     size: 16,
@@ -495,7 +641,7 @@ class LearnerDashboard extends StatelessWidget {
               ),
             ),
           );
-        }).toList(),
+        }),
       ],
     );
   }

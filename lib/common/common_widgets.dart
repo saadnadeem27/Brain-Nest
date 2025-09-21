@@ -1,8 +1,11 @@
-import 'package:Vadai/common_imports.dart';
-import 'package:Vadai/controller/student/student_profile_controller.dart';
-import 'package:Vadai/controller/teachers/teacher_profile_controller.dart';
-import 'package:Vadai/helper/local_storage_helper.dart';
-import 'package:Vadai/main.dart';
+
+import 'package:brain_nest/common/App_strings.dart';
+import 'package:brain_nest/common/assets.dart';
+import 'package:brain_nest/common/size_config.dart';
+import 'package:brain_nest/common/text_style.dart';
+import 'package:brain_nest/common_imports.dart';
+import 'package:brain_nest/helper/local_storage_helper.dart';
+import 'package:brain_nest/main.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';

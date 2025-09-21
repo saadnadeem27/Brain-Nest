@@ -1,7 +1,8 @@
 class AppStrings {
   static String appName = "Brain Nest";
   static String logIntoAccount = "Log into account";
-  static String createNewAccount = "Create new accoun      'Please bring your social Science maps that has been mentioned in the class tomorrow itself.. I have also assigned your assignments in the Brain Nest app, please finish it so that tomorrow you all understand what I\'m doing.';";
+  static String createNewAccount =
+      "Create new accoun      'Please bring your social Science maps that has been mentioned in the class tomorrow itself.. I have also assigned your assignments in the Brain Nest app, please finish it so that tomorrow you all understand what I'm doing.';";
   static String createYourPassword = "Create your password";
   static String alreadyHaveAnAccount = "Already have an account?";
   static String dontHaveAnAccount = "Don't have an account?";
@@ -135,8 +136,7 @@ class AppStrings {
   static const String industry = "Industry:";
   static const String industryHint = "Industry";
   static const String careerPath = "Career Path:";
-  static const String careerPathSteps =
-      "Step 1: Degree\n"
+  static const String careerPathSteps = "Step 1: Degree\n"
       "Step 2: Course\n"
       "Step 3: Competition\n"
       "Step 4: Skill Development\n"

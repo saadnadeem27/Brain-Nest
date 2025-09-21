@@ -14,6 +14,21 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
+///
+/// IMPORTANT: Replace the placeholder configuration below with your actual Firebase project configuration
+///
+/// To get your Firebase configuration:
+/// 1. Go to Firebase Console (https://console.firebase.google.com/)
+/// 2. Select your project or create a new one
+/// 3. Go to Project Settings (gear icon)
+/// 4. Scroll down to "Your apps" section
+/// 5. Add or select your app for each platform
+/// 6. Copy the configuration values to replace the placeholders below
+///
+/// For production deployment, consider using different Firebase projects for:
+/// - Development environment
+/// - Staging environment
+/// - Production environment
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -40,46 +55,86 @@ class DefaultFirebaseOptions {
     }
   }
 
+  /// Web Firebase Configuration
+  /// Replace with your Firebase Web App configuration
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'demo-key',
-    appId: '1:123456789:web:demo',
-    messagingSenderId: '123456789',
-    projectId: 'brain-nest-demo',
-    authDomain: 'brain-nest-demo.firebaseapp.com',
-    storageBucket: 'brain-nest-demo.appspot.com',
+    // TODO: Replace with your web app's API key
+    apiKey: 'your-web-api-key-here',
+    // TODO: Replace with your web app's App ID
+    appId: 'your-web-app-id-here',
+    // TODO: Replace with your Firebase project's messaging sender ID
+    messagingSenderId: 'your-messaging-sender-id-here',
+    // TODO: Replace with your Firebase project ID
+    projectId: 'your-project-id-here',
+    // TODO: Replace with your web app's auth domain (optional)
+    authDomain: 'your-project-id.firebaseapp.com',
+    // TODO: Replace with your storage bucket (optional)
+    storageBucket: 'your-project-id.appspot.com',
+    // TODO: Replace with your measurement ID for Google Analytics (optional)
+    measurementId: 'G-XXXXXXXXXX',
   );
 
+  /// Android Firebase Configuration
+  /// Replace with your Firebase Android App configuration
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'demo-key',
-    appId: '1:123456789:android:demo',
-    messagingSenderId: '123456789',
-    projectId: 'brain-nest-demo',
-    storageBucket: 'brain-nest-demo.appspot.com',
+    // TODO: Replace with your Android app's API key
+    apiKey: 'your-android-api-key-here',
+    // TODO: Replace with your Android app's App ID
+    appId: 'your-android-app-id-here',
+    // TODO: Replace with your Firebase project's messaging sender ID
+    messagingSenderId: 'your-messaging-sender-id-here',
+    // TODO: Replace with your Firebase project ID
+    projectId: 'your-project-id-here',
+    // TODO: Replace with your storage bucket (optional)
+    storageBucket: 'your-project-id.appspot.com',
   );
 
+  /// iOS Firebase Configuration
+  /// Replace with your Firebase iOS App configuration
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'demo-key',
-    appId: '1:123456789:ios:demo',
-    messagingSenderId: '123456789',
-    projectId: 'brain-nest-demo',
-    storageBucket: 'brain-nest-demo.appspot.com',
-    iosBundleId: 'com.example.brainNest',
+    // TODO: Replace with your iOS app's API key
+    apiKey: 'your-ios-api-key-here',
+    // TODO: Replace with your iOS app's App ID
+    appId: 'your-ios-app-id-here',
+    // TODO: Replace with your Firebase project's messaging sender ID
+    messagingSenderId: 'your-messaging-sender-id-here',
+    // TODO: Replace with your Firebase project ID
+    projectId: 'your-project-id-here',
+    // TODO: Replace with your storage bucket (optional)
+    storageBucket: 'your-project-id.appspot.com',
+    // TODO: Replace with your iOS bundle ID
+    iosBundleId: 'com.example.brain_nest',
   );
 
+  /// macOS Firebase Configuration
+  /// Replace with your Firebase macOS App configuration
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'demo-key',
-    appId: '1:123456789:macos:demo',
-    messagingSenderId: '123456789',
-    projectId: 'brain-nest-demo',
-    storageBucket: 'brain-nest-demo.appspot.com',
-    iosBundleId: 'com.example.brainNest',
+    // TODO: Replace with your macOS app's API key
+    apiKey: 'your-macos-api-key-here',
+    // TODO: Replace with your macOS app's App ID
+    appId: 'your-macos-app-id-here',
+    // TODO: Replace with your Firebase project's messaging sender ID
+    messagingSenderId: 'your-messaging-sender-id-here',
+    // TODO: Replace with your Firebase project ID
+    projectId: 'your-project-id-here',
+    // TODO: Replace with your storage bucket (optional)
+    storageBucket: 'your-project-id.appspot.com',
+    // TODO: Replace with your macOS bundle ID
+    iosBundleId: 'com.example.brain_nest',
   );
 
+  /// Windows Firebase Configuration
+  /// Replace with your Firebase Windows App configuration
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'demo-key',
-    appId: '1:123456789:windows:demo',
-    messagingSenderId: '123456789',
-    projectId: 'brain-nest-demo',
-    storageBucket: 'brain-nest-demo.appspot.com',
+    // TODO: Replace with your Windows app's API key
+    apiKey: 'your-windows-api-key-here',
+    // TODO: Replace with your Windows app's App ID
+    appId: 'your-windows-app-id-here',
+    // TODO: Replace with your Firebase project's messaging sender ID
+    messagingSenderId: 'your-messaging-sender-id-here',
+    // TODO: Replace with your Firebase project ID
+    projectId: 'your-project-id-here',
+    // TODO: Replace with your storage bucket (optional)
+    storageBucket: 'your-project-id.appspot.com',
   );
 }

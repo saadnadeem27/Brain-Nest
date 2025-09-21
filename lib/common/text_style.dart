@@ -1,7 +1,7 @@
+import 'package:brain_nest/common/app_colors.dart';
+import 'package:brain_nest/common/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:Vadai/common/app_colors.dart';
-import 'package:Vadai/common/assets.dart';
-import 'package:Vadai/common/size_config.dart';
+
 
 class AppTextStyles {
   static TextStyle textStyle(

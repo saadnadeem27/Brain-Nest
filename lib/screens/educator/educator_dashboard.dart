@@ -6,7 +6,7 @@ import '../../components/ui_components.dart';
 import '../../controllers/educator/educator_home_controller.dart';
 
 class EducatorDashboard extends StatelessWidget {
-  const EducatorDashboard({Key? key}) : super(key: key);
+  const EducatorDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class EducatorDashboard extends StatelessWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       flexibleSpace: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: AppColors.accentGradient,
         ),
         child: FlexibleSpaceBar(
@@ -128,7 +128,7 @@ class EducatorDashboard extends StatelessWidget {
 
   Widget _buildWelcomeSection(EducatorHomeController controller) {
     final profile = controller.educatorProfile.value;
-    
+
     return GradientCard(
       colors: [
         AppColors.primary.withOpacity(0.1),
@@ -197,7 +197,7 @@ class EducatorDashboard extends StatelessWidget {
               color: AppColors.primary.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(
+            child: const Icon(
               Icons.school,
               color: AppColors.primary,
               size: 24,
@@ -232,7 +232,7 @@ class EducatorDashboard extends StatelessWidget {
                 ],
                 child: Column(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.assignment,
                       size: 32,
                       color: AppColors.primary,
@@ -261,7 +261,7 @@ class EducatorDashboard extends StatelessWidget {
                 ],
                 child: Column(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.grade,
                       size: 32,
                       color: AppColors.accent,
@@ -290,7 +290,7 @@ class EducatorDashboard extends StatelessWidget {
                 ],
                 child: Column(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.analytics,
                       size: 32,
                       color: Colors.orange,
@@ -358,7 +358,7 @@ class EducatorDashboard extends StatelessWidget {
                               gradient: AppColors.primaryGradient,
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.book,
                               color: Colors.white,
                               size: 20,
@@ -414,7 +414,7 @@ class EducatorDashboard extends StatelessWidget {
                               color: AppColors.textSecondary,
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.arrow_forward,
                             color: AppColors.primary,
                             size: 16,
@@ -434,7 +434,7 @@ class EducatorDashboard extends StatelessWidget {
 
   Widget _buildStudentMetrics(EducatorHomeController controller) {
     final metrics = controller.studentMetrics.value;
-    
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -572,7 +572,8 @@ class EducatorDashboard extends StatelessWidget {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: _getStatusColor(submission['status']).withOpacity(0.2),
+                      color: _getStatusColor(submission['status'])
+                          .withOpacity(0.2),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
@@ -588,7 +589,7 @@ class EducatorDashboard extends StatelessWidget {
               ),
             ),
           );
-        }).toList(),
+        }),
       ],
     );
   }
@@ -623,7 +624,7 @@ class EducatorDashboard extends StatelessWidget {
                       gradient: AppColors.accentGradient,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.schedule,
                       color: Colors.white,
                       size: 24,
@@ -660,7 +661,7 @@ class EducatorDashboard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
+                  const Icon(
                     Icons.arrow_forward_ios,
                     color: AppColors.accent,
                     size: 16,
@@ -669,7 +670,7 @@ class EducatorDashboard extends StatelessWidget {
               ),
             ),
           );
-        }).toList(),
+        }),
       ],
     );
   }

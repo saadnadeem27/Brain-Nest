@@ -6,12 +6,12 @@ import '../common/app_colors.dart';
 class CourseDetailScreen extends StatefulWidget {
   final String courseId;
   final String courseTitle;
-  
+
   const CourseDetailScreen({
-    Key? key,
+    super.key,
     required this.courseId,
     required this.courseTitle,
-  }) : super(key: key);
+  });
 
   @override
   State<CourseDetailScreen> createState() => _CourseDetailScreenState();
@@ -247,11 +247,9 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
             ),
           ),
           const SizedBox(height: 32),
-          
           _buildSectionTitle('What You\'ll Learn'),
           const SizedBox(height: 16),
           ..._buildLearningObjectives(),
-          
           const SizedBox(height: 32),
           _buildSectionTitle('Course Statistics'),
           const SizedBox(height: 16),
@@ -313,45 +311,47 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
       'Understand ethical AI and bias mitigation',
     ];
 
-    return objectives.map((objective) => Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColors.accent.withOpacity(0.2),
-          width: 1,
-        ),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 24,
-            height: 24,
-            decoration: BoxDecoration(
-              gradient: AppColors.accentGradient,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Icon(
-              Icons.check,
-              size: 16,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Text(
-              objective,
-              style: GoogleFonts.inter(
-                fontSize: 14,
-                color: AppColors.textPrimary,
+    return objectives
+        .map((objective) => Container(
+              margin: const EdgeInsets.only(bottom: 12),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: AppColors.accent.withOpacity(0.2),
+                  width: 1,
+                ),
               ),
-            ),
-          ),
-        ],
-      ),
-    )).toList();
+              child: Row(
+                children: [
+                  Container(
+                    width: 24,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      gradient: AppColors.accentGradient,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Icon(
+                      Icons.check,
+                      size: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Text(
+                      objective,
+                      style: GoogleFonts.inter(
+                        fontSize: 14,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ))
+        .toList();
   }
 
   Widget _buildStatsGrid() {
@@ -493,7 +493,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
   Widget _buildAssignmentCard(int assignmentNumber) {
     final isSubmitted = assignmentNumber <= 2;
     final dueDate = DateTime.now().add(Duration(days: assignmentNumber * 3));
-    
+
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(20),
@@ -501,7 +501,9 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: isSubmitted ? AppColors.success.withOpacity(0.3) : AppColors.warning.withOpacity(0.3),
+          color: isSubmitted
+              ? AppColors.success.withOpacity(0.3)
+              : AppColors.warning.withOpacity(0.3),
           width: 1,
         ),
         boxShadow: [
@@ -521,7 +523,9 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
-                  color: isSubmitted ? AppColors.success.withOpacity(0.1) : AppColors.warning.withOpacity(0.1),
+                  color: isSubmitted
+                      ? AppColors.success.withOpacity(0.1)
+                      : AppColors.warning.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Icon(
@@ -554,9 +558,12 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: isSubmitted ? AppColors.success.withOpacity(0.1) : AppColors.warning.withOpacity(0.1),
+                  color: isSubmitted
+                      ? AppColors.success.withOpacity(0.1)
+                      : AppColors.warning.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -741,7 +748,8 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
     );
   }
 
-  Widget _buildActivityItem(String title, String time, IconData icon, Color color) {
+  Widget _buildActivityItem(
+      String title, String time, IconData icon, Color color) {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       child: Row(
