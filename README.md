@@ -9,8 +9,8 @@
 [![GetX](https://img.shields.io/badge/GetX-9C27B0?style=for-the-badge&logo=flutter&logoColor=white)](https://pub.dev/packages/get)
 
 *A comprehensive learning management system connecting students and educators through innovative technology*
-
-[📱 Demo](#demo) • [🚀 Features](#features) • [🏗️ Architecture](#architecture) • [⚡ Quick Start](#quick-start) • [📖 Documentation](#documentation)
+<!-- 
+[📱 Demo](#demo) • [🚀 Features](#features) • [🏗️ Architecture](#architecture) • [⚡ Quick Start](#quick-start) • [📖 Documentation](#documentation) -->
 
 </div>
 
@@ -417,27 +417,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support & Contact
 
-- **📧 Email**: support@brainnest.com
+<!-- - **📧 Email**: support@brainnest.com
 - **💬 Discord**: [Join our community](https://discord.gg/brainnest)
 - **🐛 Issues**: [GitHub Issues](https://github.com/yourusername/brain_nest/issues)
-- **📖 Documentation**: [Wiki](https://github.com/yourusername/brain_nest/wiki)
+- **📖 Documentation**: [Wiki](https://github.com/yourusername/brain_nest/wiki) -->
+- **💼 LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourusername)
+- **🐙 GitHub**: [Your GitHub Profile](https://github.com/yourusername)
 
-## 🗺️ Roadmap
-
-### 🔮 Upcoming Features
-- [ ] 📹 Video conferencing integration
-- [ ] 📝 Rich text editor for assignments
-- [ ] 🤖 AI-powered content recommendations
-- [ ] 📱 Mobile app widgets
-- [ ] 🌐 Multi-language support
-- [ ] 📊 Advanced analytics dashboard
-- [ ] 🔔 Push notifications
-- [ ] 📋 Offline mode support
-
-### 🎯 Version History
-- **v1.0.0** - Initial release with core features
-- **v1.1.0** - Enhanced UI and performance improvements
-- **v1.2.0** - Firebase integration and cloud features
 
 ---
 
