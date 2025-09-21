@@ -1,0 +1,2 @@
+C:/Users/vinay/Documents/VADAI/android/app/.cxx/Debug/6h392t5a/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/vinay/Documents/VADAI/android/app/.cxx/Debug/6h392t5a/x86_64/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+C:/Users/vinay/Documents/VADAI/android/app/.cxx/RelWithDebInfo/2366645s/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/vinay/Documents/VADAI/android/app/.cxx/RelWithDebInfo/2366645s/armeabi-v7a/CMakeFiles/rebuild_cache.dir
