@@ -1,7 +1,7 @@
 class AppStrings {
-  static String vadai = "VADAI";
+  static String appName = "Brain Nest";
   static String logIntoAccount = "Log into account";
-  static String createNewAccount = "Create new account";
+  static String createNewAccount = "Create new accoun      'Please bring your social Science maps that has been mentioned in the class tomorrow itself.. I have also assigned your assignments in the Brain Nest app, please finish it so that tomorrow you all understand what I\'m doing.';";
   static String createYourPassword = "Create your password";
   static String alreadyHaveAnAccount = "Already have an account?";
   static String dontHaveAnAccount = "Don't have an account?";
@@ -41,7 +41,7 @@ class AppStrings {
   static String careerDashboard = "Career Dashboard";
   static String testYourAcademic = "Learn & Grow";
   static String curriculum = 'Curriculum';
-  static String vadaiCurriculum = 'VADAI Curriculum';
+  static String brainNestCurriculum = 'Brain Nest Curriculum';
   static String modules = 'Modules';
   static String chapters = 'chapters';
   static String chapterId = 'chapterId';
@@ -62,7 +62,7 @@ class AppStrings {
   static String selectClass = "Select Class";
   static String selectSection = "Select Section";
   static String searchHere = "Search here...";
-  static String vadaiChat = 'VADAI Chat';
+  static String brainNestChat = 'Brain Nest Chat';
   static String vadSquadReview = 'VAD Squad Review';
   static String copyContents = 'Copy Contents';
   static String comment = 'Comment';
@@ -127,8 +127,8 @@ class AppStrings {
       "Oops! Please enter a valid email.";
   static const String weaknessesWrittenIndetail =
       "Weaknesses written in detail.";
-  static const stringByUsingVADAIYouAgreeToTheTermsAndPrivacyPolicy =
-      "By using VADAI, you agree to the \n Terms and Privacy Policy.";
+  static const stringByUsingBrainNestYouAgreeToTheTermsAndPrivacyPolicy =
+      "By using Brain Nest, you agree to the \n Terms and Privacy Policy.";
   static String letsGetYouSyncedUpWithYourSchool =
       "Let’s get you synced up with your School.";
 

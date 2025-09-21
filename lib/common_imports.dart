@@ -1,10 +1,33 @@
+// Brain Nest - Common Imports
+// This file contains all commonly used imports across the application
+
+// Flutter Core
 export 'package:flutter/material.dart';
-export 'package:Vadai/common/assets.dart';
-export 'package:Vadai/common/common_widgets.dart';
-export 'package:Vadai/common/size_config.dart';
+export 'package:flutter/services.dart';
+
+// State Management
 export 'package:get/get.dart';
-export 'package:Vadai/common/App_strings.dart';
-export 'package:Vadai/common/app_colors.dart';
-export 'package:Vadai/common/text_style.dart';
-export 'package:Vadai/routes.dart';
-export 'dart:developer' hide Flow;
+
+// UI & Fonts
+export 'package:google_fonts/google_fonts.dart';
+
+// Utilities
+export 'dart:async';
+export 'dart:convert';
+export 'dart:io' hide HeaderValue;
+export 'dart:developer' show log;
+
+// App Common Files
+export 'common/app_colors.dart';
+export 'services/static_data_service.dart';
+
+// App Screens
+export 'screens/learner/learner_dashboard.dart';
+export 'screens/educator/educator_dashboard.dart';
+
+// Controllers
+export 'controllers/learner/learner_home_controller.dart';
+export 'controllers/educator/educator_home_controller.dart';
+
+// Components
+export 'components/ui_components.dart';

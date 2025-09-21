@@ -1,12 +1,9 @@
-import 'package:Vadai/helper/local_storage_helper.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:flutter/services.dart';
-import 'package:Vadai/common/App_strings.dart';
-import 'package:Vadai/common/app_colors.dart';
-import 'package:Vadai/routes.dart';
+import 'package:brain_nest/common/app_colors.dart';
+import 'package:brain_nest/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 GlobalKey<ScaffoldMessengerState> scaffoldKey =
@@ -46,29 +43,50 @@ class MyApp extends StatelessWidget {
       ).copyWith(textScaler: const TextScaler.linear(1.0)),
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: AppStrings.vadai,
+        title: "Brain Nest",
         scaffoldMessengerKey: scaffoldKey,
-        getPages: RoutesStudents.routes,
-        // initialRoute: RouteName.userDashboard,
-        initialRoute: RouteNames.initial,
+        getPages: AppRoutes.routes,
+        initialRoute: AppRoutes.initial,
         transitionDuration: const Duration(milliseconds: 300),
         defaultTransition: Transition.rightToLeft,
         theme: ThemeData(
           useMaterial3: true,
           dividerTheme: const DividerThemeData(),
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: AppColors.black,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: AppColors.primaryPurple,
+            brightness: Brightness.light,
+            primary: AppColors.primaryPurple,
+            secondary: AppColors.accentTeal,
+            surface: AppColors.surfaceLight,
+            background: AppColors.backgroundPrimary,
+            error: AppColors.errorRed,
           ),
-          dialogBackgroundColor: AppColors.white,
+          dialogBackgroundColor: AppColors.surfaceLight,
           inputDecorationTheme: InputDecorationTheme(
             errorStyle: TextStyle(
-              color: AppColors.white,
+              color: AppColors.errorRed,
               fontSize: (14 / 852.0) * MediaQuery.of(context).size.height,
               fontWeight: FontWeight.w400,
-              fontFamily: GoogleFonts.rubik().fontFamily,
+              fontFamily: GoogleFonts.inter().fontFamily,
             ),
           ),
-          scaffoldBackgroundColor: AppColors.black,
+          scaffoldBackgroundColor: AppColors.backgroundPrimary,
+          appBarTheme: AppBarTheme(
+            backgroundColor: AppColors.surfaceLight,
+            foregroundColor: AppColors.textPrimary,
+            elevation: 0,
+            surfaceTintColor: Colors.transparent,
+          ),
+          textTheme: GoogleFonts.interTextTheme(
+            Theme.of(context).textTheme.copyWith(
+              headlineLarge: TextStyle(color: AppColors.textPrimary),
+              headlineMedium: TextStyle(color: AppColors.textPrimary),
+              headlineSmall: TextStyle(color: AppColors.textPrimary),
+              bodyLarge: TextStyle(color: AppColors.textPrimary),
+              bodyMedium: TextStyle(color: AppColors.textSecondary),
+              bodySmall: TextStyle(color: AppColors.textTertiary),
+            ),
+          ),
         ),
         // home: const PeoplesScreen(),
       ),
